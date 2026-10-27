@@ -1,7 +1,40 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\ModuloController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index'])->name('index');
+Route::get('about', [MainController::class, 'about'])->name('about');
+Route::get('portfolio', [MainController::class, 'portfolio'])->name('portfolio');
+Route::get('array', [MainController::class, 'array'])->name('array');
+Route::get('array', [MainController::class, 'array'])->name('array');
+//Route::get('aboutName', [MainController::class, 'aboutName'])->name('aboutName');
+
+// las 7 rutas
+/*Route::get('alumno/create', [AlumnoController::class, 'create'])->name('alumno.create');
+Route::post('alumno', [AlumnoController::class,'store'])->name('alumno.store');
+Route::get('alumno', [AlumnoController::class, 'index'])->name('alumno.index');
+Route::get('alumno/{alumno}', [AlumnoController::class, 'show'])->name('alumno.show');
+Route::get('alumno/{alumno}/edit', [AlumnoController::class, 'edit'])->name('alumno.edit');
+//Route::get('alumno', [AlumnoController::class, 'index'])->name('alumno.index');
+Route::put('alumno/{alumno}', [AlumnoController::class,'update'])->name('alumno.update');
+Route::delete('alumno/{alumno}', [AlumnoController::class, 'destroy'])->name('alumno.destroy');*/
+
+Route::resource('alumno', AlumnoController::class);
+
+Route::resource('profesor', ProfesorController::class);
+Route::resource('modulo', ModuloController::class);
+
+/*Route::get('profesor/create', [ProfesorController::class, 'create'])->name('profesor.create');
+Route::post('profesor', [ProfesorController::class,'store'])->name('profesor.store');
+Route::get('profesor', [ProfesorController::class, 'index'])->name('profesor.index');
+Route::get('profesor/{profesor}', [ProfesorController::class, 'show'])->name('profesor.show');
+Route::get('profesor/{profesor}/edit', [ProfesorController::class, 'edit'])->name('profesor.edit');
+//Route::get('alumno', [AlumnoController::class, 'index'])->name('alumno.index');
+Route::put('profesor/{profesor}', [ProfesorController::class,'update'])->name('profesor.update');
+Route::delete('profesor/{profesor}', [ProfesorController::class, 'destroy'])->name('profesor.destroy');*/
+
