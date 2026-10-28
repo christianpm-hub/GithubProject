@@ -62,5 +62,9 @@ class MainController extends Controller
     function portfolio(): View{
         return view ('portfolio');
     }
+
+    function gestion():View{
+        return view ('gestion');
+    }
 }
 

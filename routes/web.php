@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\ModuloController;
 use App\Http\Controllers\MainController;
@@ -12,6 +13,7 @@ Route::get('about', [MainController::class, 'about'])->name('about');
 Route::get('portfolio', [MainController::class, 'portfolio'])->name('portfolio');
 Route::get('array', [MainController::class, 'array'])->name('array');
 Route::get('array', [MainController::class, 'array'])->name('array');
+Route::get('gestion', [MainController::class, 'gestion'])->name('gestion');
 //Route::get('aboutName', [MainController::class, 'aboutName'])->name('aboutName');
 
 // las 7 rutas
@@ -25,9 +27,10 @@ Route::put('alumno/{alumno}', [AlumnoController::class,'update'])->name('alumno.
 Route::delete('alumno/{alumno}', [AlumnoController::class, 'destroy'])->name('alumno.destroy');*/
 
 Route::resource('alumno', AlumnoController::class);
-
 Route::resource('profesor', ProfesorController::class);
 Route::resource('modulo', ModuloController::class);
+
+Route::resource('matricula', MatriculaController::class);
 
 /*Route::get('profesor/create', [ProfesorController::class, 'create'])->name('profesor.create');
 Route::post('profesor', [ProfesorController::class,'store'])->name('profesor.store');

@@ -49,6 +49,8 @@
                             href="{{ route('alumno.index') }}">Alumno</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="{{ route('profesor.index') }}">Profesor</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="{{ route('gestion') }}">Gestión</a></li>
                 </ul>
             </div>
         </div>
@@ -67,15 +69,15 @@
         @enderror
 
         @session('success') <!-- SI LLEGA UNA VARIABLE EN LA SESIÓN DE NOMBRE SUCCESS -->
-        <div class="row">
-            <div class="col-md-4 mx-auto">
-                <div class="alert alert-info" role="alert">
-                    {{session('success')}}
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="alert alert-info" role="alert">
+                        {{session('success')}}
+                    </div>
                 </div>
             </div>
-        </div>
         @endsession
-        
+
         @yield('before-content')
         @yield('content') <!-- directiva de blade (@word) que crea una referencia que cuando herede puedo rellenar-->
         @yield('portfolio')
